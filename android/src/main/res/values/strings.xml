@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accessibility_service_label">This app</string>
+    <string name="tracking_service_description">Enabling this lets this app collect only app names, visit times, ad impressions, and shopping events for market-research rewards.\n\nNo keystrokes or personal content are saved, and the SDK never performs actions on your device.\n\nYou can revoke access whenever you like.\n\nMove the slider to ON, tap OK, and return to the app.</string>
+    <string name="tracking_service_summary">Turn on this app to opt in and become a member.</string>
+</resources>
