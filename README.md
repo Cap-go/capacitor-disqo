@@ -9,9 +9,6 @@
 Private Capacitor bridge for Disqo's Android Pulse SDK.
 
 This repo is intentionally configured for internal/client work first:
-
-- it stays private for now,
-- it does not publish to npm while `"private": true` is set in `package.json`,
 - and it expects the private Pulse Android SDK artifact to be supplied by the client.
 
 ## What it does
