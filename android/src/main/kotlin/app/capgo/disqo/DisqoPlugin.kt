@@ -13,7 +13,7 @@ import kotlinx.coroutines.cancel
 
 @CapacitorPlugin(name = "Disqo")
 class DisqoPlugin : Plugin() {
-    private val pluginVersion = "8.0.0"
+    private val pluginVersion = "8.1.1"
     private val pluginScope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
     private val implementation = Disqo(this, pluginScope)
 

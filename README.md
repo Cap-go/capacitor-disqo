@@ -6,20 +6,16 @@
   <h2><a href="https://capgo.app/consulting/?ref=plugin_disqo">Missing a feature? We’ll build the plugin for you 💪</a></h2>
 </div>
 
-Private Capacitor bridge for Disqo's Android Pulse SDK.
-
-This repo is intentionally configured for internal/client work first:
-- and it expects the private Pulse Android SDK artifact to be supplied by the client.
+Capacitor bridge for Disqo's Android Pulse SDK.
 
 ## What it does
 
-- Wraps the private Android Pulse SDK behind a Capacitor-friendly TypeScript API.
+- Wraps the Android Pulse SDK behind a Capacitor-friendly TypeScript API.
 - Lets the host app initialize the SDK, start or stop tracking, deep-link into Android accessibility settings, and query service state.
 - Bridges Pulse token callbacks back to JavaScript so the host app can keep using its own auth stack.
 
 ## What it does not do
 
-- It does not ship the private Disqo SDK artifact itself.
 - It does not implement the client-facing onboarding UI or Google Play disclosures for you.
 - It does not automate Play Console declarations, privacy policy updates, or the review video requirement.
 
@@ -37,17 +33,6 @@ This repo is intentionally configured for internal/client work first:
 bun add @capgo/capacitor-disqo
 bunx cap sync android
 ```
-
-## Private SDK Setup
-
-This plugin is buildable without the client SDK, but the Android runtime bridge only works once the private Pulse artifact is present.
-
-Choose one of these setups before calling `initialize()`:
-
-1. Drop the client-provided AAR into `android/libs/` inside this plugin repo.
-2. Replace the local AAR flow in [android/build.gradle](/Users/martindonadieu/Projects/capgo_all/capgo_plugins/capacitor-disqo/android/build.gradle) with the client's internal Maven repository and dependency coordinates.
-
-If the SDK is missing at runtime, `getSdkStatus()` will report that the required classes could not be found.
 
 ## Android Notes
 
@@ -141,7 +126,7 @@ The bundled `example-app/` is wired to:
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-Capacitor API for the private Disqo Pulse Android SDK.
+Capacitor API for the Disqo Pulse Android SDK.
 
 The host app is still responsible for the onboarding UI, prominent disclosure,
 Google Play declarations, and privacy policy updates.
@@ -152,9 +137,7 @@ Google Play declarations, and privacy policy updates.
 getSdkStatus() => Promise<SdkStatusResult>
 ```
 
-Check whether the private Android Pulse SDK classes are available at runtime.
-
-Call this before `initialize()` when the SDK artifact is supplied outside of this repo.
+Check whether the Android Pulse SDK classes are available at runtime.
 
 **Returns:** <code>Promise&lt;<a href="#sdkstatusresult">SdkStatusResult</a>&gt;</code>
 
@@ -456,7 +439,7 @@ Remove every active listener registered through the plugin.
 
 #### SdkStatusResult
 
-Result of checking whether the private Disqo Pulse SDK is available on Android.
+Result of checking whether the Disqo Pulse SDK is available on Android.
 
 | Prop                 | Type                  | Description                                                              | Since |
 | -------------------- | --------------------- | ------------------------------------------------------------------------ | ----- |
@@ -467,11 +450,11 @@ Result of checking whether the private Disqo Pulse SDK is available on Android.
 
 #### DisqoInitializeOptions
 
-Initialization options for the private Pulse bridge.
+Initialization options for the Pulse bridge.
 
 | Prop              | Type                | Description                                                                                                     | Since |
 | ----------------- | ------------------- | --------------------------------------------------------------------------------------------------------------- | ----- |
-| **`apiUrl`**      | <code>string</code> | Base URL used by the private Pulse SDK.                                                                         | 8.0.0 |
+| **`apiUrl`**      | <code>string</code> | Base URL used by the Pulse SDK.                                                                                 | 8.0.0 |
 | **`accessToken`** | <code>string</code> | Optional cached JWT that can satisfy the SDK's first token lookup without a round-trip to JavaScript listeners. | 8.0.0 |
 
 
@@ -498,7 +481,7 @@ Update the cached JWT used by the native token provider bridge.
 
 Lightweight view of the current Pulse service state.
 
-The private SDK can enrich this state in future versions, so the plugin exposes both a normalized
+The SDK can enrich this state in future versions, so the plugin exposes both a normalized
 `enabled` boolean and a raw string snapshot from the underlying Android object.
 
 | Prop          | Type                 | Description                                                                 | Since |

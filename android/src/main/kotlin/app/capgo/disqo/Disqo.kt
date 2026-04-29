@@ -71,7 +71,7 @@ class Disqo(
         return SdkStatus(
             available = false,
             missingClasses = missing,
-            message = "Disqo Pulse SDK classes were not found. Add the private pulse-external Android SDK AAR to android/libs/ or configure the client's internal Maven repository before using this plugin.",
+            message = "Disqo Pulse SDK classes were not found in the current Android build.",
         )
     }
 

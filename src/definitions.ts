@@ -15,7 +15,7 @@ export interface PluginVersionResult {
 }
 
 /**
- * Result of checking whether the private Disqo Pulse SDK is available on Android.
+ * Result of checking whether the Disqo Pulse SDK is available on Android.
  *
  * @since 8.0.0
  */
@@ -43,13 +43,13 @@ export interface SdkStatusResult {
 }
 
 /**
- * Initialization options for the private Pulse bridge.
+ * Initialization options for the Pulse bridge.
  *
  * @since 8.0.0
  */
 export interface DisqoInitializeOptions {
   /**
-   * Base URL used by the private Pulse SDK.
+   * Base URL used by the Pulse SDK.
    *
    * @example "https://pulse.example.internal"
    * @since 8.0.0
@@ -102,7 +102,7 @@ export interface UpdateAccessTokenOptions {
 /**
  * Lightweight view of the current Pulse service state.
  *
- * The private SDK can enrich this state in future versions, so the plugin exposes both a normalized
+ * The SDK can enrich this state in future versions, so the plugin exposes both a normalized
  * `enabled` boolean and a raw string snapshot from the underlying Android object.
  *
  * @since 8.0.0
@@ -258,7 +258,7 @@ export interface ServiceEnabledResult {
 }
 
 /**
- * Capacitor API for the private Disqo Pulse Android SDK.
+ * Capacitor API for the Disqo Pulse Android SDK.
  *
  * The host app is still responsible for the onboarding UI, prominent disclosure,
  * Google Play declarations, and privacy policy updates.
@@ -267,9 +267,7 @@ export interface ServiceEnabledResult {
  */
 export interface DisqoPlugin {
   /**
-   * Check whether the private Android Pulse SDK classes are available at runtime.
-   *
-   * Call this before `initialize()` when the SDK artifact is supplied outside of this repo.
+   * Check whether the Android Pulse SDK classes are available at runtime.
    *
    * @since 8.0.0
    */
