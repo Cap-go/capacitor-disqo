@@ -2,7 +2,7 @@
   "name": "@capgo/capacitor-disqo",
   "version": "8.1.0",
   "description": "Capacitor bridge for the private Disqo Pulse Android SDK.",
-  "private": true,
+  "private": false,
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
